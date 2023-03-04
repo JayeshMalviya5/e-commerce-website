@@ -13,6 +13,7 @@ function App() {
         <Route exact path="/" element={<PrivateRoute />}>
             <Route path="/product" element = {<ProductHome />}/>
             <Route path="/product/:productId" element = {<Details />} />
+            {/*  */}
         </Route>
       </Routes>
     </div>
