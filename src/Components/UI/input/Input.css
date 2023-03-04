@@ -1,0 +1,24 @@
+.input-container{
+margin: 9px 11px;
+color: white;
+width: 100%;
+}
+
+.input-lable{
+  font-size: .9em;
+  margin-bottom: 9px;
+
+}
+
+.input-body{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-body input{
+    background-color: inherit;
+    font-size: 1.1em;
+    border: none;
+    border-bottom: 1px solid dodgerblue;
+    width: 100%;
+}

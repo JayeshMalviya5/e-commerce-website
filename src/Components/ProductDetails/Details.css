@@ -1,0 +1,54 @@
+.content{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    padding: 40px 40px;
+    margin-top: 50px;
+}
+
+.features > h3{
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.features  li{
+    margin-left: 30px;
+    list-style : disc;
+}
+
+.price{
+    color: green;
+}
+
+.info > div{
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width : 650px){
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 80%;
+        margin: auto;
+        padding: 0px 0px;
+        margin-top: 0px;
+    }
+
+    .image > img{
+        width: 400px;
+        height: 300px;
+    }
+
+    .features > h3{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+        font-weight: 800;
+    }
+
+
+}
+
