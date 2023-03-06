@@ -1,7 +1,6 @@
 import { createStore } from "redux";
 import { reducer } from "./reducer";
 export const INITIAL_STATE = {
-  cart: [],
   itemsToRenderInCart: [],
   originalList: [
     {

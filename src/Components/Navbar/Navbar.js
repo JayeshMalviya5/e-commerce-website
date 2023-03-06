@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Navbar.css";
 import Btn from "../UI/button/Btn";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 function Navbar() {
   const store = useSelector((state) => state.itemsToRenderInCart);
-  
+  // const [count, setCount] = useState(store.length);
+  // useEffect(()=>{
+  //  setCount(store.length)
+  // },[count])
   const navigate = useNavigate();
   const logout = () => {
     navigate("/login");

@@ -26,7 +26,7 @@ function Card({ id, img, desc, price, lable, stock }) {
       <div className="item_price">{price}</div>
       <div className="item_add">
         <button onClick={()=>{handleRemoveFromCart(id)}}>-</button>
-        <input type="text" value={`${stock}`} />
+        <input type="text" value="Remove / Add"/>
         <button onClick={()=>{handleAddInCart(id)}}>+</button>
       </div>
       <div className="item_button">

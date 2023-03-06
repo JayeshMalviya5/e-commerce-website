@@ -5,7 +5,7 @@ import Card from "../UI/Cards/Card";
 import "./ProductHome.css";
 function ProductHome() {
   const store = useSelector((state) => state);
-  console.log("store", store.itemsToRenderInCart.length);
+  console.log("store", store);
 
   return (
     <>
