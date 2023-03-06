@@ -30,6 +30,24 @@
     margin-top: 10px;
 }
 
+.item_add button{
+    width: 30px;
+    border: 1px solid black;
+    background-color: rgb(202, 198, 198);
+    border: none;
+}
+
+.item_add{
+    display: flex;
+    border: 1px solid black;
+    width: 70%;
+}
+
+.item_add input{
+    border: none;
+    text-align: center;
+}
+
 @media screen and (max-width : 650px){
     .card {
         display: flex;

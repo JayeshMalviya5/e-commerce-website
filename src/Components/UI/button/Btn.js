@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 function Btn({ lable, onClick }) {
   return (
     <div>

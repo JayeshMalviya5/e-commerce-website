@@ -5,7 +5,6 @@ import Navbar from '../Components/Navbar/Navbar'
 const PrivateRoute = () => {
   return (
     <>
-    <Navbar />
     <div>
         {window.localStorage.getItem("token") ?
        <Outlet /> :

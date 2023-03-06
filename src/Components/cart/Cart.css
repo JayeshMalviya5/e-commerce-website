@@ -1,0 +1,11 @@
+.cart_product{
+    padding: 20px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.empty{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: red;
+}

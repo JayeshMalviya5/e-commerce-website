@@ -2,11 +2,18 @@ import React from "react";
 import "./Navbar.css";
 import Btn from "../UI/button/Btn";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 function Navbar() {
+  const store = useSelector((state) => state.itemsToRenderInCart);
+  
   const navigate = useNavigate();
   const logout = () => {
     navigate("/login");
     window.localStorage.clear();
+  };
+  const toCart = () => {
+    navigate("/product/cart");
+    // window.localStorage.clear();
   };
 
   const toHome = () => {
@@ -19,7 +26,10 @@ function Navbar() {
         <div className="heading">E-Commerce Website</div>
         <div className="button">
           <Btn lable="Home" onClick={toHome} />
-          <Btn lable="Cart(0)" />
+          <Btn
+            lable={`Cart(${store.length})`}
+            onClick={toCart}
+          />
           <Btn lable="Logout" onClick={logout} />
         </div>
       </div>

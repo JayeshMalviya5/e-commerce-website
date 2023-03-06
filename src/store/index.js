@@ -1,8 +1,8 @@
-import { createStore } from "redux"
-import { reducer } from "./reducer"
-
+import { createStore } from "redux";
+import { reducer } from "./reducer";
 export const INITIAL_STATE = {
-    cart: [],
+  cart: [],
+  itemsToRenderInCart: [],
   originalList: [
     {
       id: "ADKF27DMC",
@@ -90,7 +90,6 @@ export const INITIAL_STATE = {
       },
     },
   ],
-}
-
+};
 
 export const store = createStore(reducer, INITIAL_STATE);
