@@ -1,58 +1,75 @@
 import React, { useState } from "react";
 import "./Login.css";
-import {client} from "../../AxiosClient";
-import { FormControl, FormLabel} from "@chakra-ui/react";
+import { auth, database } from "../../Firebase";
+import { FormControl, FormLabel } from "@chakra-ui/react";
 import Btn from "../UI/button/Btn";
 // import Navbar from "../Navbar/Navbar";
-import {  useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const handleClick = () => {
-    setError("");
-      if(email && password){
-        const body = {email, password};
-        client.post("login",body)
-        .then((resp)=>{
-          console.log("response",resp);
-          window.localStorage.setItem("token",resp.data.token);
-          navigate("/product");
-        })
-        .catch((err) => {
-          setError(err.response.data.error);
-          console.log("after login click",err.response.data.error)
-        });
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    try {
+      const data = await auth.signInWithEmailAndPassword(email, password);
+      if (data) {
+        localStorage.setItem("token", data.user.auth.uid);
       }
+    } catch (error) {
+      alert("Please enter valid userName and password");
+    }
+    if (localStorage.getItem("token")) {
+      navigate("/e-commerce-website/product");
+    }
   };
   const handleInput = (event) => {
-     const {name,value} = event.target;
-     name==="email" ? setEmail(value) : setPassword(value);
-  }
-  
+    const { name, value } = event.target;
+    name === "email" ? setEmail(value) : setPassword(value);
+  };
+
   return (
     <>
-    <div className="login_info">
-    Note : Please use <br />
-    Email : eve.holt@reqres.in <br />
-    password : cityslicka
-      <div>
-        <FormControl mx="auto">
-          <FormLabel>Email</FormLabel>
-          <input type="email" name="email" value={email} onChange={handleInput} />
-          <FormLabel mt={"10px"}>Password</FormLabel>
-          <input type="email" name="password" value={password} onChange={handleInput}/>
-        </FormControl>
-        <div className="login_button">
-        <Btn lable="Login" onClick={handleClick} />
+      {/* <Signup /> */}
+      <div className="login_info">
+        Note : Please use <br />
+        Email : eve.holt@reqres.in <br />
+        password : cityslicka
+        <div>
+          <form action="" onSubmit={handleLogin}>
+            <FormControl mx="auto">
+              <FormLabel>Email</FormLabel>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleInput}
+              />
+              <FormLabel mt={"10px"}>Password</FormLabel>
+              <input
+                type="email"
+                name="password"
+                value={password}
+                onChange={handleInput}
+              />
+              <div className="login_button">
+                <Btn lable="Login" type="submit" />
+              </div>
+              <div
+                className="sign"
+                style={{ color: "black", marginTop: "20px" }}
+              >
+                Dont have account ? <br />
+                <Link to="/signup" style={{ color: "blue" }}>
+                  Click to create account
+                </Link>
+              </div>
+            </FormControl>
+          </form>
         </div>
-        
       </div>
-    </div>
-    {/* <Navbar /> */}
+      {/* <Navbar /> */}
     </>
-    
   );
 }
 

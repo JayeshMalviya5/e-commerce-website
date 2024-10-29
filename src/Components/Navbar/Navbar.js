@@ -11,16 +11,16 @@ function Navbar() {
   // },[count])
   const navigate = useNavigate();
   const logout = () => {
-    navigate("/login");
+    navigate("/e-commerce-website/login");
     window.localStorage.clear();
   };
   const toCart = () => {
-    navigate("/product/cart");
+    navigate("/e-commerce-website/product/cart");
     // window.localStorage.clear();
   };
 
   const toHome = () => {
-    navigate("/product");
+    navigate("/e-commerce-website/product");
     // window.localStorage.clear();
   };
   return (

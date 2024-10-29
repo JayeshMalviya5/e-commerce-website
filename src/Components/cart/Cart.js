@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import './Cart.css'
 import Card from "../UI/Cards/Card";
 import Navbar from "../Navbar/Navbar";
+import Btn from "../UI/button/Btn";
 function Cart() {
   const store = useSelector((state) => state.itemsToRenderInCart);
   
   return (
     <>
+    {console.log("cart rerendered")}
     <Navbar />
     <div className="cart_product">
     
@@ -15,12 +17,12 @@ function Cart() {
         store.map((item) => {
           return (
             <Card
-              key={item.id}
-              id={item.id}
-              img={item.imgSrc}
-              desc={item.name}
-              price={item.price}
-              stock={item.availableQuantity}
+              key={item.product[0].id}
+              id={item.product[0].id}
+              img={item.product[0].imgSrc}
+              desc={item.product[0].name}
+              price={item.product[0].price}
+              stock={item.count}
               lable="More Details"
             />
           );

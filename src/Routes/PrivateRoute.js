@@ -8,7 +8,7 @@ const PrivateRoute = () => {
     <div>
         {window.localStorage.getItem("token") ?
        <Outlet /> :
-       <Navigate to={"/login"} />   
+       <Navigate to={"/e-commerce-website/login"} />   
     }
     </div>
     </>

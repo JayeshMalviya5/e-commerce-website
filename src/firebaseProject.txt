@@ -1,0 +1,18 @@
+Project name
+login-auth
+Project ID 
+login-auth-7d5ff
+Project number 
+386391970939
+Default GCP resource location 
+Not yet selected
+Web API Key
+AIzaSyAeNu4d2KhPFT9lSgmHWHGHM-37he-vNSo
+Environment
+This setting customizes your project for different stages of the app lifecycle
+Environment type
+Unspecified
+Public settings
+These settings control instances of your project shown to the public
+Public-facing name 
+project-386391970939

@@ -20,7 +20,7 @@ function Details() {
   }, []);
 
   const goToHome = () => {
-    navigate("/product");
+    navigate("/e-commerce-website/product");
   };
 
   return (
